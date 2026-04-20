@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct DaylightApp: App {
     var body: some Scene {
-        WindowGroup {
+        MenuBarExtra("Daylight", systemImage:"sun.max"){
             ContentView()
         }
+        .menuBarExtraStyle(.window)
     }
 }
