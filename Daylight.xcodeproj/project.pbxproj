@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FB6496CF2F94CF4E00D20975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6496CE2F94CF4E00D20975 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FB6496D52F94CF4F00D20975 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -25,13 +29,27 @@
 
 /* Begin PBXFileReference section */
 		FB6496C72F94CF4C00D20975 /* Daylight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daylight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB6496CE2F94CF4E00D20975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB6496D42F94CF4F00D20975 /* DaylightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaylightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6496DE2F94CF4F00D20975 /* DaylightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaylightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FB50DA662F95B71700D91A09 /* Exceptions for "Daylight" folder in "Daylight" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FB6496C62F94CF4C00D20975 /* Daylight */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FB6496C92F94CF4C00D20975 /* Daylight */ = {
+		FB50DA622F95B71400D91A09 /* Daylight */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FB50DA662F95B71700D91A09 /* Exceptions for "Daylight" folder in "Daylight" target */,
+			);
 			path = Daylight;
 			sourceTree = "<group>";
 		};
@@ -75,10 +93,11 @@
 		FB6496BE2F94CF4C00D20975 = {
 			isa = PBXGroup;
 			children = (
-				FB6496C92F94CF4C00D20975 /* Daylight */,
 				FB6496D72F94CF4F00D20975 /* DaylightTests */,
 				FB6496E12F94CF4F00D20975 /* DaylightUITests */,
 				FB6496C82F94CF4C00D20975 /* Products */,
+				FB6496CE2F94CF4E00D20975 /* Assets.xcassets */,
+				FB50DA622F95B71400D91A09 /* Daylight */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +127,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FB6496C92F94CF4C00D20975 /* Daylight */,
+				FB50DA622F95B71400D91A09 /* Daylight */,
 			);
 			name = Daylight;
 			packageProductDependencies = (
@@ -212,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6496CF2F94CF4E00D20975 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,13 +412,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUM6CW572A;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Daylight/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -422,13 +447,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUM6CW572A;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Daylight/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

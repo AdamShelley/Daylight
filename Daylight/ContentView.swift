@@ -8,46 +8,74 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var status: String = "Ready"
+    @State private var status: String = ""
     @State private var lastSavedPath: String? = nil
+    let settingsStore: SettingsStore
 
+    
     private let capture = ScreenCapture()
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Daylight")
-                .font(.headline)
+        
+        NavigationStack {
+                  VStack() {
+                      
+                          VStack(alignment: .leading, spacing: 12) {
 
-            Text(status)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                              Text(status)
+                                  .font(.subheadline)
+                                  .foregroundStyle(.secondary)
 
-            if let path = lastSavedPath {
-                Text(path)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .textSelection(.enabled)
-                    .lineLimit(3)
+                              if let path = lastSavedPath {
+                                  Text(path)
+                                      .font(.caption)
+                                      .foregroundStyle(.secondary)
+                                      .textSelection(.enabled)
+                                      .lineLimit(3)
 
-                Button("Reveal in Finder") {
-                    NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: path)])
-                }
-                .buttonStyle(.link)
-            }
+                                  Button("Reveal in Finder") {
+                                      NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: path)])
+                                  }
+                                  .buttonStyle(.link)
+                              }
 
-            Button("Capture Now") {
-                Task {
-                    await runCapture()
-                }
-            }
-            .keyboardShortcut(.defaultAction)
+                              Button("Capture Now") {
+                                  Task {
+                                      await runCapture()
+                                  }
+                              }
+                              .keyboardShortcut(.defaultAction)
+                              
+                           
 
-            Button("Quit Daylight") {
-                NSApplication.shared.terminate(nil)
-            }
-        }
-        .padding(16)
-        .frame(width: 280)
+                          }
+                          .padding(16)
+                          .frame(width: 280)
+                      
+                      HStack{
+                          NavigationLink("Settings") {
+                              SettingsView(settingsStore: settingsStore)
+                          }
+                          Spacer()
+                          
+                          Button("Quit Daylight") {
+                              NSApplication.shared.terminate(nil)
+                          }
+                      }
+                      
+                  }
+                  .navigationTitle("Daylight")
+            
+            
+            
+          }
+        .padding(10)
+    
+        
+        
+        
+    
+        
     }
 
     private func runCapture() async {
@@ -64,5 +92,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(settingsStore: SettingsStore())
 }
