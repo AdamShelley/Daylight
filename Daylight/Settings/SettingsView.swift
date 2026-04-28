@@ -11,11 +11,7 @@ struct SettingsView: View {
     @State private var selectedTime: Date = Date()
 
     let settingsStore: SettingsStore
-    
-    enum CaptureFrequency: String, Codable, CaseIterable {
-        case daily = "Daily"
-        case weekly = "Weekly"
-    }
+
     
     var body: some View {
         VStack {
@@ -25,13 +21,21 @@ struct SettingsView: View {
             
             List {
                 ForEach(settingsStore.scheduledTimes){time in
-                    Text(String(format: "%02d:%02d", time.hour, time.minute)
-)
-                }
-                .onDelete { indexSet in
-                    settingsStore.scheduledTimes.remove(atOffsets: indexSet)
-                    settingsStore.save()
-
+                    HStack {
+                        Text(String(format: "%02d:%02d", time.hour, time.minute))
+                        Spacer()
+                        Button(role: .destructive) {
+                            // remove this time and save
+                            if let index = settingsStore.scheduledTimes.firstIndex(where: {$0.id == time.id})
+                                {
+                                settingsStore.scheduledTimes.remove(at: index)
+                            }
+                            settingsStore.save()
+                        } label: {
+                            Image(systemName: "minus.circle.fill")
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
             }
             
@@ -42,10 +46,14 @@ struct SettingsView: View {
             
             Button("Add"){
                addTime()
+
+
             }
         }
         .padding(16)
         .frame(width: 280)
+        .frame(minHeight: 150)
+
     }
     
     func addTime() {
