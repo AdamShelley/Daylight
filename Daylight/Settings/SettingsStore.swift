@@ -10,20 +10,17 @@ import Foundation
 @Observable
 final class SettingsStore {
     var scheduledTimes: [ScheduledTime] = []
-    
+    var saveFolder: URL
     
     
     private var fileURL: URL {
-        let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let folder = base.appendingPathComponent("Daylight")
-        return folder.appendingPathComponent("settings.json")
+        saveFolder.appendingPathComponent("settings.json")
     }
     
     init() {
         do {
-            try FileManager.default.createDirectory(at: fileURL.deletingLastPathComponent(), withIntermediateDirectories: true)
-            
-            
+            let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
+            self.saveFolder = base.appendingPathComponent("Daylight")
 
         } catch {
             print(error)
@@ -47,4 +44,6 @@ final class SettingsStore {
         
         
     }
+    
+    
 }

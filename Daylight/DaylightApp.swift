@@ -26,7 +26,10 @@ struct DaylightApp: App {
             ContentView(settingsStore: settingsStore)
         }
         .menuBarExtraStyle(.window)
-        .environment(settingsStore)
+        
+        Settings {
+            SettingsView(settingsStore: settingsStore)
+        }
     }
     
     

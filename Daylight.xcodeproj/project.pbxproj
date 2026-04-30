@@ -35,7 +35,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		FB50DA662F95B71700D91A09 /* Exceptions for "Daylight" folder in "Daylight" target */ = {
+		FBFCC7202FA1A04C00C84760 /* Exceptions for "Daylight" folder in "Daylight" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -45,14 +45,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FB50DA622F95B71400D91A09 /* Daylight */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				FB50DA662F95B71700D91A09 /* Exceptions for "Daylight" folder in "Daylight" target */,
-			);
-			path = Daylight;
-			sourceTree = "<group>";
-		};
 		FB6496D72F94CF4F00D20975 /* DaylightTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DaylightTests;
@@ -61,6 +53,14 @@
 		FB6496E12F94CF4F00D20975 /* DaylightUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DaylightUITests;
+			sourceTree = "<group>";
+		};
+		FBFCC7172FA1A04B00C84760 /* Daylight */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FBFCC7202FA1A04C00C84760 /* Exceptions for "Daylight" folder in "Daylight" target */,
+			);
+			path = Daylight;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -97,7 +97,7 @@
 				FB6496E12F94CF4F00D20975 /* DaylightUITests */,
 				FB6496C82F94CF4C00D20975 /* Products */,
 				FB6496CE2F94CF4E00D20975 /* Assets.xcassets */,
-				FB50DA622F95B71400D91A09 /* Daylight */,
+				FBFCC7172FA1A04B00C84760 /* Daylight */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,7 +127,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FB50DA622F95B71400D91A09 /* Daylight */,
+				FBFCC7172FA1A04B00C84760 /* Daylight */,
 			);
 			name = Daylight;
 			packageProductDependencies = (
